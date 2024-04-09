@@ -1,4 +1,4 @@
-module clkgenremastered(input clk, output reg ti, output rs232_tx);
+module clkgenremastered(input clk, external, output reg ti, output rs232_tx);
 
 	wire tempwire;
 	reg [13:0]cnt;
@@ -21,12 +21,11 @@ module clkgenremastered(input clk, output reg ti, output rs232_tx);
 		end
 	
 	
-	reg external;
 	reg check;
 	reg [7:0]data;
 	reg [27:0] count;
 	reg [7:0] predata;
-	
+	/*
 	always @ (posedge clk)
 		begin
 			if (count >= 50000000)
@@ -42,7 +41,7 @@ module clkgenremastered(input clk, output reg ti, output rs232_tx);
 					count <= count + 1;
 				end
 	end
-
+*/
 	
 	reg ready;
 	
